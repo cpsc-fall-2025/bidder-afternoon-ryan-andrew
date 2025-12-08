@@ -42,10 +42,13 @@ std::string GetStrategy() {
 //   - Bids must be non-negative integers.
 void GenerateBids(int rounds, int budget, std::string output_filename) {
   std::ofstream out {output_filename};
+  int result = 0;
   for (int i {0}; i < rounds; i++) {
-    int result = budget / rounds;
+
+    result = budget/rounds;
+     out << result << "/ln";
   }
-  out << result << "/ln";
+ 
 }
 
 // ============================================================================
@@ -56,7 +59,5 @@ void GenerateBids(int rounds, int budget, std::string output_filename) {
 int main() {
   // You can write code here to call your functions and see if they work.
   // Example:
-  // GenerateBids(10, 100, "test_output.txt");
-  GenerateBids(10,100, "test_output.txt");
-  return 0;
+  // GenerateBids(10, 100, "test_output.txt")
 }
